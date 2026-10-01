@@ -1,0 +1,16 @@
+<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="100" height="100" fill="#272524"/>
+  <!-- Outer ring -->
+  <circle cx="50" cy="50" r="46" stroke="#6898a8" stroke-width="1" opacity="0.7" fill="none"/>
+  <!-- Inner ring -->
+  <circle cx="50" cy="50" r="42" stroke="#6898a8" stroke-width="0.8" opacity="0.5" fill="none"/>
+  <!-- EK letterform -->
+  <text x="50" y="65"
+        text-anchor="middle"
+        font-family="Almendra SC, Georgia, serif"
+        font-size="38"
+        font-weight="400"
+        fill="#6898a8"
+        opacity="0.9">EK</text>
+</svg>

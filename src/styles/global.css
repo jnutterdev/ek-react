@@ -1,0 +1,202 @@
+@import "./tokens.css";
+
+/* ─── Reset ──────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ─── Body ───────────────────────────────────────────────────── */
+body {
+  background-color: var(--void-deep);
+  background-image: radial-gradient(
+      ellipse 70% 50% at 0% 0%,
+      rgba(180, 100, 80, 0.07) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse 60% 40% at 100% 100%,
+      rgba(104, 152, 168, 0.07) 0%,
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse 80% 60% at 50% 50%,
+      transparent 50%,
+      rgba(20, 18, 18, 0.4) 100%
+    );
+  background-attachment: fixed;
+  color: var(--text-body);
+  font-family: "IM Fell English", serif;
+  font-size: 16px;
+  line-height: 1.75;
+  min-height: 100vh;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+/* ─── Scrollbar ──────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: var(--void-deep);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--void-border);
+  border-radius: 3px;
+}
+
+/* ─── Typography helpers ─────────────────────────────────────── */
+.font-display {
+  font-family: "Cinzel Decorative", serif;
+}
+.font-heading {
+  font-family: "Cinzel", serif;
+}
+.font-body {
+  font-family: "IM Fell English", serif;
+}
+.font-identity {
+  font-family: "Almendra SC", serif;
+}
+
+/* ─── Wrap utility ───────────────────────────────────────────── */
+.wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+
+/* ─── Section label ──────────────────────────────────────────── */
+.section-label {
+  font-family: "Cinzel Decorative", serif;
+  font-size: clamp(36px, 6vw, 64px);
+  font-weight: 700;
+  color: var(--mist-bright);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  margin-bottom: 2.5rem;
+}
+
+/* ─── Buttons ────────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.5rem 1.1rem;
+  font-family: "Cinzel", serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  border: 1px solid transparent;
+}
+.btn-primary {
+  background: var(--teal-deep);
+  border-color: var(--border-accent);
+  color: var(--teal-bright);
+}
+.btn-primary:hover {
+  background: var(--teal-mid);
+  color: var(--void-deep);
+}
+.btn-ghost {
+  background: transparent;
+  border-color: var(--border-default);
+  color: var(--text-muted);
+}
+.btn-ghost:hover {
+  border-color: var(--border-mist);
+  color: var(--mist-bright);
+}
+
+/* ─── Badges ─────────────────────────────────────────────────── */
+.badge {
+  font-family: "Cinzel", serif;
+  font-size: 8px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.15rem 0.4rem;
+  border-radius: 2px;
+  border: 1px solid var(--border-default);
+  color: var(--text-dim);
+}
+
+/* Disposition */
+.badge.friendly {
+  border-color: rgba(104, 152, 168, 0.4);
+  color: var(--teal-mid);
+}
+.badge.hostile {
+  border-color: rgba(200, 136, 120, 0.4);
+  color: var(--mauve-bright);
+}
+.badge.neutral {
+  border-color: rgba(184, 176, 152, 0.3);
+  color: var(--mist-deep);
+}
+.badge.unknown {
+  border-color: var(--border-default);
+  color: var(--text-dim);
+}
+
+/* Vitality */
+.badge.alive {
+  border-color: rgba(104, 152, 168, 0.3);
+  color: var(--teal-mid);
+}
+.badge.deceased {
+  border-color: rgba(200, 136, 120, 0.3);
+  color: var(--mauve-bright);
+}
+
+/* Item rarity */
+.badge.magic {
+  border-color: rgba(104, 152, 168, 0.4);
+  color: var(--teal-mid);
+}
+.badge.artifact {
+  border-color: rgba(200, 184, 120, 0.4);
+  color: var(--gold);
+}
+.badge.rare {
+  border-color: rgba(104, 152, 168, 0.3);
+  color: var(--teal-bright);
+}
+
+/* Location status */
+.badge.explored {
+  border-color: rgba(104, 152, 168, 0.4);
+  color: var(--teal-mid);
+}
+.badge.unexplored {
+  border-color: rgba(128, 120, 104, 0.3);
+  color: var(--mist-deep);
+}
+.badge.secret {
+  border-color: rgba(200, 184, 120, 0.4);
+  color: var(--gold);
+}
+.badge.danger {
+  border-color: rgba(200, 136, 120, 0.4);
+  color: var(--mauve-bright);
+}
+
