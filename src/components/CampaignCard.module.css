@@ -1,0 +1,34 @@
+.card {
+  display: block;
+  background: var(--void-surface);
+  border: 1px solid var(--border-default);
+  padding: 1.5rem;
+  text-decoration: none;
+  transition: background 0.15s, border-color 0.15s;
+}
+.card:hover {
+  background: var(--void-raised);
+  border-color: var(--border-mist);
+}
+.card:hover .title { color: var(--mist-bright); }
+.header {
+  display: flex; align-items: flex-start;
+  justify-content: space-between; gap: 1rem;
+  margin-bottom: 0.6rem;
+}
+.title {
+  font-family: "Cinzel", serif; font-size: 18px; font-weight: 600;
+  color: var(--mist-mid); letter-spacing: 0.04em;
+  transition: color 0.2s;
+}
+.tagline {
+  font-style: italic; font-size: 15px;
+  color: var(--text-muted); margin-bottom: 1rem;
+}
+.meta {
+  display: flex; gap: 1.5rem;
+  font-family: "Cinzel", serif; font-size: 10px;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--text-dim);
+}
+.meta i { color: var(--teal-mid); margin-right: 0.3rem; }

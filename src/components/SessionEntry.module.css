@@ -1,0 +1,42 @@
+.entry {
+  display: flex; align-items: flex-start; gap: 1.25rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--void-surface);
+  border-bottom: 1px solid var(--border-default);
+  text-decoration: none;
+  transition: background 0.15s;
+}
+.entry:last-child { border-bottom: none; }
+.entry:hover { background: var(--void-raised); }
+.entry:hover .title { color: var(--mist-bright); }
+.num {
+  flex-shrink: 0; width: 48px; text-align: center;
+  padding-top: 0.15rem;
+}
+.numeral {
+  font-family: "Cinzel Decorative", serif; font-size: 22px;
+  color: var(--mist-deep); line-height: 1;
+}
+.body { flex: 1; min-width: 0; }
+.title {
+  font-family: "Cinzel", serif; font-size: 16px; font-weight: 600;
+  color: var(--mist-mid); letter-spacing: 0.04em;
+  margin-bottom: 0.3rem; transition: color 0.2s;
+}
+.summary {
+  font-style: italic; font-size: 15px;
+  color: var(--text-muted); line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+.meta {
+  display: flex; gap: 1.5rem; flex-wrap: wrap;
+  font-family: "Cinzel", serif; font-size: 10px;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--text-dim);
+}
+.meta i { color: var(--teal-mid); margin-right: 0.3rem; }
+.arrow {
+  flex-shrink: 0; color: var(--text-dim); font-size: 11px;
+  padding-top: 0.3rem; transition: color 0.2s;
+}
+.entry:hover .arrow { color: var(--mist-mid); }

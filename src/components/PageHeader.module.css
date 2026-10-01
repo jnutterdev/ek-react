@@ -1,0 +1,34 @@
+.header {
+  margin-top: var(--nav-height);
+  padding: 4rem 0 2.5rem;
+  border-bottom: 1px solid var(--border-default);
+  background: linear-gradient(180deg, rgba(104,152,168,0.05) 0%, transparent 100%);
+}
+.inner {
+  max-width: var(--content-max); margin: 0 auto; padding: 0 var(--content-pad);
+  display: flex; align-items: flex-end; justify-content: space-between; gap: 2rem;
+}
+.back {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-family: "Cinzel", serif; font-size: 10px;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--text-dim); text-decoration: none;
+  margin-bottom: 1rem; transition: color 0.2s;
+}
+.back:hover { color: var(--mist-mid); }
+.title {
+  font-family: "Cinzel Decorative", serif;
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: 700; color: var(--mist-bright);
+  line-height: 1; margin-bottom: 0.5rem;
+}
+.subtitle {
+  font-family: "Cinzel", serif; font-size: 14px;
+  letter-spacing: 0.08em; color: var(--text-muted);
+}
+.actions {
+  display: flex; gap: 0.6rem; padding-bottom: 0.25rem; flex-shrink: 0;
+}
+@media (max-width: 600px) {
+  .inner { flex-direction: column; align-items: flex-start; }
+}

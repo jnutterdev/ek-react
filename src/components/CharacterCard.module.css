@@ -1,0 +1,45 @@
+.card {
+  display: flex; flex-direction: column;
+  background: var(--void-surface);
+  border: 1px solid var(--border-default);
+  text-decoration: none;
+  overflow: hidden;
+  transition: background 0.15s, border-color 0.15s;
+}
+.card:hover { background: var(--void-raised); border-color: var(--border-mist); }
+.card:hover .name { color: var(--mist-bright); }
+.portrait {
+  aspect-ratio: 3/4; overflow: hidden;
+  background: var(--void-raised);
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+}
+.img {
+  width: 100%; height: 100%; object-fit: cover;
+  filter: grayscale(0.4) sepia(0.2);
+  mix-blend-mode: luminosity;
+}
+.placeholder { font-size: 3rem; color: rgba(104,152,168,0.25); }
+.deceased {
+  position: absolute; top: 0.5rem; right: 0.5rem;
+  background: rgba(200,136,120,0.2); border: 1px solid rgba(200,136,120,0.4);
+  padding: 0.2rem 0.4rem; font-size: 10px; color: var(--mauve-bright);
+}
+.body { padding: 0.9rem 1rem; }
+.name {
+  font-family: "Cinzel", serif; font-size: 14px; font-weight: 600;
+  color: var(--mist-mid); letter-spacing: 0.04em;
+  margin-bottom: 0.2rem; transition: color 0.2s;
+}
+.sub {
+  font-family: "Cinzel", serif; font-size: 10px;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--text-dim); margin-bottom: 0.4rem;
+  display: flex; gap: 0.5rem;
+}
+.sub span + span::before { content: "·"; margin-right: 0.5rem; }
+.player {
+  font-family: "Cinzel", serif; font-size: 10px;
+  letter-spacing: 0.08em; color: var(--text-dim);
+}
+.player i { color: var(--teal-mid); margin-right: 0.3rem; font-size: 10px; }
