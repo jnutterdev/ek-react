@@ -1,4 +1,5 @@
 import { useEffect, type ReactNode } from 'react';
+import { SITE_INFO } from '../lib/site-info';
 import Footer from './Footer';
 import Nav from './Nav';
 
@@ -7,11 +8,9 @@ interface LayoutProps {
   children: ReactNode;
 }
 
-const SITE_NAME = 'Emberfall Keep';
-
-export default function Layout({ title = SITE_NAME, children }: LayoutProps) {
+export default function Layout({ title = SITE_INFO.title, children }: LayoutProps) {
   useEffect(() => {
-    document.title = title === SITE_NAME ? title : `${title} — ${SITE_NAME}`;
+    document.title = title === SITE_INFO.title ? title : `${title} — ${SITE_INFO.title}`;
   }, [title]);
 
   return (
