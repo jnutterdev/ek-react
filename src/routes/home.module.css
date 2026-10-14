@@ -1,0 +1,656 @@
+/* ─── HERO ──────────────────────────────────────────────────────── */
+.hero {
+  margin-top: var(--nav-height);
+  position: relative;
+  height: 88vh;
+  min-height: 520px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.heroArt {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(39, 37, 36, 0.3) 0%,
+      transparent 30%,
+      transparent 50%,
+      var(--void-deep) 100%
+    ),
+    radial-gradient(
+      ellipse 60% 70% at 30% 60%,
+      rgba(180, 100, 80, 0.15) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse 50% 60% at 75% 40%,
+      rgba(104, 152, 168, 0.12) 0%,
+      transparent 55%
+    ),
+    url("../assets/hero-image.jpg");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: saturate(0.3) sepia(0.4);
+}
+
+.heroArt::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+.monogram {
+  position: absolute;
+  right: 8%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 280px;
+  height: 280px;
+  color: rgba(104, 152, 168, 0.35);
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  padding: 0 2.5rem 3.5rem;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.heroTitle {
+  font-family: "Cinzel Decorative", serif;
+  font-size: clamp(40px, 7vw, 80px);
+  font-weight: 700;
+  color: var(--mist-bright);
+  line-height: 1;
+  letter-spacing: 0.01em;
+  text-shadow: 0 2px 40px rgba(0, 0, 0, 0.6);
+}
+
+.heroRight {
+  text-align: right;
+  max-width: 280px;
+  padding-bottom: 0.4rem;
+}
+
+.heroTagline {
+  font-family: "IM Fell English", serif;
+  font-style: italic;
+  font-size: 13px;
+  color: var(--mist-mid);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.heroActions {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: flex-end;
+}
+
+.heroLink {
+  font-family: "Cinzel", serif;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--teal-mid);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(104, 152, 168, 0.4);
+  padding-bottom: 1px;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.heroLink:hover {
+  color: var(--teal-bright);
+  border-color: var(--teal-bright);
+}
+
+.pillActive {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.2rem 0.65rem;
+  border-radius: 2px;
+  font-family: "Cinzel", serif;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  background: rgba(104, 152, 168, 0.1);
+  border: 1px solid rgba(104, 152, 168, 0.4);
+  color: var(--teal-bright);
+  margin-bottom: 0.75rem;
+}
+
+.pillActive::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--teal-bright);
+}
+
+/* ─── THE CAMPAIGN ──────────────────────────────────────────────── */
+.campaign {
+  padding: 6rem 0 5rem;
+  border-bottom: 1px solid var(--border-default);
+  background: linear-gradient(160deg, rgba(180, 100, 80, 0.05) 0%, transparent 50%);
+}
+
+.campaignInner {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.campaignImage {
+  aspect-ratio: 3/4;
+  background: var(--void-raised);
+  border: 1px solid var(--border-default);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(104, 152, 168, 0.15);
+  font-size: 64px;
+  position: relative;
+  overflow: hidden;
+}
+
+.campaignImage::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(39, 37, 36, 0.6) 0%, transparent 50%);
+}
+
+.coverImg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.campaignMeta {
+  font-family: "Cinzel", serif;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 1.25rem;
+}
+
+.campaignTitle {
+  font-family: "Cinzel Decorative", serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--mist-bright);
+  line-height: 1.15;
+  margin-bottom: 0.25rem;
+}
+
+.campaignSubtitle {
+  font-family: "Cinzel", serif;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.campaignDesc {
+  font-style: italic;
+  font-size: 15px;
+  color: var(--text-body);
+  line-height: 1.85;
+  margin-bottom: 1.5rem;
+}
+
+.campaignDescLabel {
+  font-family: "Cinzel", serif;
+  font-style: normal;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--teal-mid);
+}
+
+.campaignStats {
+  display: flex;
+  gap: 2rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--border-default);
+  border-bottom: 1px solid var(--border-default);
+  margin-bottom: 1.5rem;
+}
+
+.campaignStat .lbl {
+  display: block;
+}
+
+.lbl {
+  font-family: "Cinzel", serif;
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.val {
+  font-family: monospace;
+  font-size: 14px;
+  color: var(--teal-mid);
+}
+
+.campaignText :global(.btn) {
+  margin-right: 0.5rem;
+}
+
+/* ─── THE FELLOWSHIP ────────────────────────────────────────────── */
+.fellowship {
+  padding: 6rem 0 5rem;
+  border-bottom: 1px solid var(--border-default);
+  background: linear-gradient(180deg, rgba(104, 152, 168, 0.05) 0%, transparent 60%);
+}
+
+.fellowshipIntro {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 2.5rem;
+  gap: 2rem;
+}
+
+.fellowshipTagline {
+  font-style: italic;
+  font-size: 15px;
+  color: var(--text-muted);
+  max-width: 260px;
+  text-align: right;
+  line-height: 1.65;
+  padding-top: 0.5rem;
+}
+
+.fellowshipEmpty {
+  font-style: italic;
+  color: var(--text-dim);
+  padding: 2rem 0;
+}
+
+.portraits {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+}
+
+.portraits::-webkit-scrollbar {
+  display: none;
+}
+
+.portrait {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 calc((100% - 30px) / 6);
+  scroll-snap-align: start;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.portraitImg {
+  aspect-ratio: 2/3;
+  background: var(--void-raised);
+  border: 1px solid var(--border-default);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  color: rgba(104, 152, 168, 0.2);
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.portraitImg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--teal-tint);
+  mix-blend-mode: multiply;
+  opacity: 0.32;
+  pointer-events: none;
+  transition: opacity 0.25s;
+}
+
+.portrait:hover .portraitImg {
+  border-color: rgba(104, 152, 168, 0.6);
+  box-shadow: 0 0 0 1px rgba(104, 152, 168, 0.3), 0 6px 20px rgba(104, 152, 168, 0.18);
+}
+
+.portrait:hover .portraitImg::after {
+  opacity: 0.15;
+}
+
+.portrait:hover .portraitPhoto {
+  filter: brightness(1.08);
+}
+
+.portraitPhoto {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: filter 0.25s;
+}
+
+.portraitCaption {
+  padding: 0.6rem 0 0;
+}
+
+.portraitName {
+  font-family: "Cinzel", serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--mist-mid);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.portraitClass {
+  font-family: "Cinzel", serif;
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  color: var(--text-dim);
+}
+
+.portraitsNav {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.portraitsNav button {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--border-default);
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 13px;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.portraitsNav button:hover {
+  color: var(--mist-bright);
+  border-color: rgba(221, 212, 176, 0.3);
+}
+
+.portraitsNav button:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+/* ─── CHRONICLES ────────────────────────────────────────────────── */
+.chronicles {
+  padding: 6rem 0 5rem;
+  border-bottom: 1px solid var(--border-default);
+  background:
+    linear-gradient(200deg, rgba(180, 100, 80, 0.04) 0%, transparent 45%),
+    linear-gradient(to bottom, transparent 60%, rgba(104, 152, 168, 0.04) 100%);
+}
+
+.chroniclesInner {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.chroniclesImage {
+  aspect-ratio: 3/4;
+  background: var(--void-raised);
+  border: 1px solid var(--border-default);
+  position: relative;
+  overflow: hidden;
+}
+
+.chroniclesImage::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(39, 37, 36, 0.7) 0%, transparent 60%);
+}
+
+.chroniclesPhoto {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(0.3) sepia(0.4);
+}
+
+.chroniclesList {
+  list-style: none;
+  padding-top: 0.5rem;
+}
+
+.chroniclesList li {
+  border-bottom: 1px solid var(--border-default);
+  padding: 1.25rem 0;
+}
+
+.chroniclesList li:first-child {
+  border-top: 1px solid var(--border-default);
+}
+
+.chroniclesList li:hover .chTitle {
+  color: var(--mist-bright);
+}
+
+.chLink {
+  text-decoration: none;
+  display: block;
+}
+
+.chNum {
+  font-family: "Cinzel", serif;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  color: var(--teal-mid);
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.chTitle {
+  font-family: "Cinzel", serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--mist-mid);
+  margin-bottom: 0.3rem;
+  transition: color 0.2s;
+  letter-spacing: 0.04em;
+}
+
+.chDesc {
+  font-style: italic;
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.chMeta {
+  font-family: "Cinzel", serif;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  color: var(--text-dim);
+  margin-top: 0.5rem;
+}
+
+/* ─── COMPENDIUM ────────────────────────────────────────────────── */
+.compendium {
+  padding: 6rem 0 5rem;
+  background:
+    linear-gradient(160deg, rgba(104, 152, 168, 0.05) 0%, transparent 50%),
+    linear-gradient(to bottom right, transparent 50%, rgba(180, 100, 80, 0.04) 100%);
+}
+
+.compendiumInner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.compendiumTagline {
+  font-style: italic;
+  font-size: 22px;
+  color: var(--mist-mid);
+  font-family: "Cinzel Decorative", serif;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 2rem;
+  max-width: 340px;
+}
+
+.compendiumCounts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem 2rem;
+}
+
+.compCount .n {
+  font-family: "Cinzel Decorative", serif;
+  font-size: 32px;
+  color: var(--teal-mid);
+  line-height: 1;
+  margin-bottom: 0.2rem;
+}
+
+.compCount .lbl {
+  font-size: 10px;
+  letter-spacing: 0.15em;
+}
+
+.compEntry {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border-default);
+  transition: color 0.2s;
+  text-decoration: none;
+  color: inherit;
+}
+
+.compEntry:first-child {
+  border-top: 1px solid var(--border-default);
+}
+
+.compEntry:hover .compEntryTitle {
+  color: var(--mist-bright);
+}
+
+.compEntryIcon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border: 1px solid var(--border-default);
+  background: var(--void-raised);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--teal-mid);
+  font-size: 13px;
+  border-radius: 2px;
+  margin-top: 2px;
+}
+
+.compEntryTitle {
+  font-family: "Cinzel", serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--mist-mid);
+  margin-bottom: 0.15rem;
+  transition: color 0.2s;
+  letter-spacing: 0.04em;
+}
+
+.compEntryDesc {
+  font-style: italic;
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.compEntryCount {
+  font-family: "Cinzel", serif;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  color: var(--text-dim);
+  margin-top: 0.25rem;
+}
+
+/* ─── Responsive ────────────────────────────────────────────────── */
+@media (max-width: 800px) {
+  .heroContent {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+  .heroRight {
+    text-align: left;
+  }
+  .heroActions {
+    justify-content: flex-start;
+  }
+  .campaignInner,
+  .chroniclesInner,
+  .compendiumInner {
+    grid-template-columns: 1fr;
+  }
+  .campaignImage,
+  .chroniclesImage {
+    aspect-ratio: 16/9;
+  }
+  .fellowshipIntro {
+    flex-direction: column;
+  }
+  .fellowshipTagline {
+    text-align: left;
+    max-width: 100%;
+  }
+  .portrait {
+    flex-basis: calc((100% - 12px) / 3);
+  }
+}
+
+@media (max-width: 500px) {
+  .portrait {
+    flex-basis: calc((100% - 6px) / 2);
+  }
+}
